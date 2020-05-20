@@ -1,0 +1,16 @@
+
+
+
+
+<span style="color:red;" *ngIf="message">{{message}}</span>
+<input #file type="file" accept='image/*' (change)="preview(file.files)" />
+<input #file1 type="file" accept='image/*' (change)="preview(file1.files)" />
+<input #file2 type="file" accept='image/*' (change)="preview(file2.files)" />
+<input #file3 type="file" accept='image/*' (change)="preview(file3.files)" />
+<input #file4 type="file" accept='image/*' (change)="preview(file4.files)" />
+<input #file5 type="file" accept='image/*' (change)="preview(file5.files)" />
+<div  *ngFor="let filest of filestore; let i = index">
+<img [src]="filest" height="200" *ngIf="filest">
+<span class="delete-entry" style="cursor: pointer;" (click)="deleteImage(i)">x</span>
+
+</div>
